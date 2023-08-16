@@ -148,6 +148,16 @@ AS SELECT * FROM json.`${DA.paths.kafka_events}`
 
 -- COMMAND ----------
 
+-- MAGIC %python
+-- MAGIC df =spark.read.json("dbfs:/mnt/dbacademy-datasets/data-engineer-learning-path/v01/ecommerce/raw/events-kafka")
+-- MAGIC df.count()
+-- MAGIC spark.conf.set(
+-- MAGIC "fs.azure.account.key.dataexternallocation.blob.core.windows.net", "VpIY+YFJaKgJLy3zkW9KU92k8WtDb54JOd1WJU5wOgraPS09nd+RnxMkB3SXFTNBXizKxO3CKzyo+AStUrzysA=="
+-- MAGIC )
+-- MAGIC df.write.json("wasbs://testdata@dataexternallocation.blob.core.windows.net/jsondata/")
+
+-- COMMAND ----------
+
 SELECT * FROM event_view
 
 -- COMMAND ----------

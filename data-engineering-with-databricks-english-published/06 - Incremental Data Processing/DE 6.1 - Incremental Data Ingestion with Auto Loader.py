@@ -101,6 +101,10 @@ def autoload_to_table(data_source, source_format, table_name, checkpoint_directo
 
 # COMMAND ----------
 
+print(f"{DA.paths.working_dir}/tracker")
+
+# COMMAND ----------
+
 query = autoload_to_table(data_source = f"{DA.paths.working_dir}/tracker",
                           source_format = "json",
                           table_name = "target_table",

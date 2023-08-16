@@ -69,7 +69,7 @@ course_config = CourseConfig(course_code = "dewd",
                              expected_dbrs = "11.3.x-scala2.12, 11.3.x-photon-scala2.12, 11.3.x-cpu-ml-scala2.12")
 
 # For this course, these values will be true 99% of the time.
-https://github.com/databricks-academy/ = LessonConfig(name = None,
+lesson_config = LessonConfig(name = None,
                              create_schema = True,
                              create_catalog = False,
                              requires_uc = False,

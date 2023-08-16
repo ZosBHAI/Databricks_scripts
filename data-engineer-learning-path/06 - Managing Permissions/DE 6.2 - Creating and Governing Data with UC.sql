@@ -149,6 +149,12 @@ SELECT * FROM example.heartrate_device
 
 -- COMMAND ----------
 
+ CREATE OR REPLACE TABLE example.ext_example_heartrate_device_01
+ LOCATION 'abfss://externaldata@dataexternallocation.dfs.core.windows.net/base/example/ext_example_heartrate_device'
+ AS SELECT * FROM example.heartrate_device
+
+-- COMMAND ----------
+
 use catalog hive_metastore;
 CREATE SCHEMA IF NOT EXISTS dev_default_location;
 CREATE SCHEMA IF NOT EXISTS dev_custom_location LOCATION 'dbfs:/user/hive/uc_catalog/_custom_location.db';
